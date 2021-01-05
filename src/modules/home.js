@@ -1,6 +1,7 @@
 function createImage() {
   document.getElementById("content").innerHTML = "";
-
+  const home = document.getElementById('home');
+  home.className = 'red';
   const mainImage = document.createElement("img");
 
   mainImage.src = "./img/welcome.jpg";
