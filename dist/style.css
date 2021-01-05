@@ -16,3 +16,23 @@ span {
 span:hover {
     cursor: pointer;
 }
+
+#menu-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    width: 30vw;
+    margin: auto;
+    font-family: monospace;
+    
+}
+
+.food {
+    justify-self: start;
+}
+
+.price {
+    justify-self: end;
+    font-weight: bold;
+}
+

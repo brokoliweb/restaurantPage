@@ -1,7 +1,7 @@
 function createH1() {
   const h1 = document.createElement("H1");
 
-  h1.innerHTML = "Welcome to our Restaurant";
+  h1.innerHTML = "Welcome to MM";
 
   document.getElementById("header").appendChild(h1);
 }
