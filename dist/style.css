@@ -9,6 +9,10 @@ img {
     margin-top: 1em;
 }
 
-a{
+span {
     padding: 1em;
+}
+
+span:hover {
+    cursor: pointer;
 }

@@ -5,47 +5,34 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
+/* harmony import */ var _modules_initialPageLoad__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _modules_home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _modules_contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 
 
 
 
-function createH1() {
-    const h1 = document.createElement('H1');
 
-    h1.innerHTML = "Welcome to our Restaurant";
+init();
 
-    document.getElementById('header').appendChild(h1);
+function addNavEvents() {
+  const homeLink = document.getElementById("home");
+  const menuLink = document.getElementById("menu");
+  const contactLink = document.getElementById("contact");
+
+  // add event listeners
+
+  homeLink.addEventListener('click', _modules_home__WEBPACK_IMPORTED_MODULE_1__.home);
+  menuLink.addEventListener('click', _modules_menu__WEBPACK_IMPORTED_MODULE_2__.createMenu);
+  contactLink.addEventListener("click", _modules_contact__WEBPACK_IMPORTED_MODULE_3__.createContacts);
 }
 
-function createNav() {
-    const navMenu = document.createElement('nav');
-
-    navMenu.innerHTML = '<a id="home" href="">Home</a><a id="menu" href="">Menu</a><a id="contact" href="">Contact</a>';
-    document.getElementById('header').appendChild(navMenu);
+function init() {
+  (0,_modules_initialPageLoad__WEBPACK_IMPORTED_MODULE_0__.loadPage)();
+  addNavEvents();
+  (0,_modules_home__WEBPACK_IMPORTED_MODULE_1__.home)();
 }
-
-createH1();
-createNav();
-
-const homeLink = document.getElementById("home");
-const menuLink = document.getElementById("menu");
-const contactLink = document.getElementById("contact");
-
-// add event listeners
-
-homeLink.addEventListener("click", _home__WEBPACK_IMPORTED_MODULE_0__.home);
-menuLink.addEventListener("click", _menu__WEBPACK_IMPORTED_MODULE_1__.createMenu);
-contactLink.addEventListener("click", _contact__WEBPACK_IMPORTED_MODULE_2__.createContacts);
-
-
-
-
-
-
-
 
 
 /***/ }),
@@ -54,29 +41,30 @@ contactLink.addEventListener("click", _contact__WEBPACK_IMPORTED_MODULE_2__.crea
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "home": () => /* binding */ home
+/* harmony export */   "loadPage": () => /* binding */ loadPage
 /* harmony export */ });
+function createH1() {
+  const h1 = document.createElement("H1");
 
-function createImage() {
-    const mainImage = document.createElement('img');
+  h1.innerHTML = "Welcome to our Restaurant";
 
-    mainImage.src = './img/welcome.jpg';
-
-    document.getElementById('content').appendChild(mainImage);
+  document.getElementById("header").appendChild(h1);
 }
 
-function createWelcomeMessage() {
-    const welcomeMessage = document.createElement('p');
+function createNav() {
+  const navMenu = document.createElement("nav");
 
-    welcomeMessage.innerHTML = "Dear Guests, you are welcomed to dine with us at Our Restaurant. We will serve you with the best dishes. Hope you have a pleasant dining experience with US."
+  navMenu.innerHTML =
+    '<span id="home">Home</span><span id="menu">Menu</span><span id="contact">Contact</span>';
 
-    document.getElementById('content').appendChild(welcomeMessage);
+  document.getElementById("header").appendChild(navMenu);
 }
 
-function home() {
-    createImage();
-    createWelcomeMessage();
+function loadPage() {
+  createH1();
+  createNav();
 }
+
 
 
 
@@ -86,18 +74,32 @@ function home() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "createContacts": () => /* binding */ createContacts
+/* harmony export */   "home": () => /* binding */ home
 /* harmony export */ });
-function createContacts() {
+function createImage() {
+  document.getElementById("content").innerHTML = "";
 
-    document.getElementById('content').innerHTML = "";
+  const mainImage = document.createElement("img");
 
-    const contacts = document.createElement('p');
+  mainImage.src = "./img/welcome.jpg";
 
-    contacts.innerHTML = "Phones: +90 848 39 93";
-
-    document.getElementById('content').appendChild(contacts);
+  document.getElementById("content").appendChild(mainImage);
 }
+
+function createWelcomeMessage() {
+  const welcomeMessage = document.createElement("p");
+
+  welcomeMessage.innerHTML =
+    "Dear Guests, you are welcomed to dine with us at Our Restaurant. We will serve you with the best dishes. Hope you have a pleasant dining experience with US.";
+
+  document.getElementById("content").appendChild(welcomeMessage);
+}
+
+function home() {
+  createImage();
+  createWelcomeMessage();
+}
+
 
 
 
@@ -110,15 +112,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "createMenu": () => /* binding */ createMenu
 /* harmony export */ });
 function createMenu() {
+  const content = document.getElementById("content");
 
-    document.getElementById('content').innerHTML = "";
+  content.textContent = "";
 
-    const menu = document.createElement('p');
+  const menu = document.createElement("p");
 
-    menu.innerHTML = "Hamburger";
+  menu.innerHTML = "Hamburger";
 
-    document.getElementById('content').appendChild(menu);
+  content.appendChild(menu);
 }
+
+
+
+
+/***/ }),
+/* 4 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createContacts": () => /* binding */ createContacts
+/* harmony export */ });
+function createContacts() {
+  document.getElementById("content").innerHTML = "";
+
+  const contacts = document.createElement("p");
+
+  contacts.innerHTML = "Phones: +90 848 39 93";
+
+  document.getElementById("content").appendChild(contacts);
+}
+
 
 
 
