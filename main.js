@@ -46,7 +46,7 @@ __webpack_require__.r(__webpack_exports__);
 function createH1() {
   const h1 = document.createElement("H1");
 
-  h1.innerHTML = "Welcome to our Restaurant";
+  h1.innerHTML = "Welcome to MM";
 
   document.getElementById("header").appendChild(h1);
 }
@@ -118,7 +118,16 @@ function createMenu() {
 
   const menu = document.createElement("p");
 
-  menu.innerHTML = "Hamburger";
+  menu.innerHTML = `
+    <div id="menu-wrapper">
+        <p class="food">Broccoli Soup</p><p class="price">Free</p>
+        <p class="food">Hamburger</p><p class="price">9.90</p>
+        <p class="food">Cheese Burger</p><p class="price">10.90</p>
+        <p class="food">Special Salad</p><p class="price">3.90</p>
+        <p class="food">Lemonade</p><p class="price">1.90</p>
+        <p class="food">Brownie</p><p class="price">2.90</p>
+    </div>
+  `;
 
   content.appendChild(menu);
 }
@@ -135,14 +144,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "createContacts": () => /* binding */ createContacts
 /* harmony export */ });
 function createContacts() {
-  document.getElementById("content").innerHTML = "";
+    document.getElementById("content").innerHTML = "";
+
+  const image = document.createElement("img");
+
+  image.src = "./img/location_mars.png"
+
+  document.getElementById("content").appendChild(image);
+
+  
 
   const contacts = document.createElement("p");
 
-  contacts.innerHTML = "Phones: +90 848 39 93";
+  contacts.innerHTML = "Phones: +90 xxx 848 39 93";
 
   document.getElementById("content").appendChild(contacts);
 }
+
+
 
 
 
