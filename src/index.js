@@ -12,9 +12,26 @@ function addNavEvents() {
 
   // add event listeners
 
+  homeLink.addEventListener('click', red);
   homeLink.addEventListener('click', home);
+
+  menuLink.addEventListener('click', red);
   menuLink.addEventListener('click', createMenu);
+
+  contactLink.addEventListener("click", red);
   contactLink.addEventListener("click", createContacts);
+
+}
+
+function red(e) {
+  const homeLink = document.getElementById("home");
+  const menuLink = document.getElementById("menu");
+  const contactLink = document.getElementById("contact");
+  homeLink.classList.remove('red');
+  menuLink.classList.remove('red');
+  contactLink.classList.remove('red');
+
+  e.target.className = 'red';
 }
 
 function init() {

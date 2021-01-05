@@ -23,9 +23,26 @@ function addNavEvents() {
 
   // add event listeners
 
+  homeLink.addEventListener('click', red);
   homeLink.addEventListener('click', _modules_home__WEBPACK_IMPORTED_MODULE_1__.home);
+
+  menuLink.addEventListener('click', red);
   menuLink.addEventListener('click', _modules_menu__WEBPACK_IMPORTED_MODULE_2__.createMenu);
+
+  contactLink.addEventListener("click", red);
   contactLink.addEventListener("click", _modules_contact__WEBPACK_IMPORTED_MODULE_3__.createContacts);
+
+}
+
+function red(e) {
+  const homeLink = document.getElementById("home");
+  const menuLink = document.getElementById("menu");
+  const contactLink = document.getElementById("contact");
+  homeLink.classList.remove('red');
+  menuLink.classList.remove('red');
+  contactLink.classList.remove('red');
+
+  e.target.className = 'red';
 }
 
 function init() {
